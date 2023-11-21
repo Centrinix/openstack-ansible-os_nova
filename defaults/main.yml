@@ -340,6 +340,9 @@ nova_scheduler_extra_filters: []
 # this value to -1.
 nova_discover_hosts_in_cells_interval: "{{ 300 if groups['nova_compute'] | length > 10 else 60 }}"
 
+nova_image_metadata_prefilter: False
+nova_image_properties_default_architecture: "x86_64"
+
 # Define nfs information to enable nfs shares as mounted directories for
 # nova. The ``nova_nfs_client`` value is a list of dictionaries that must
 # be filled out completely to enable the persistent NFS mounts.

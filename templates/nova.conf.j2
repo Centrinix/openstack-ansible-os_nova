@@ -327,6 +327,7 @@ dhcp_domain = {{ nova_dhcp_domain }}
 workers = {{ nova_scheduler_workers | default(nova_api_threads) }}
 max_attempts = {{ nova_scheduler_max_attempts }}
 discover_hosts_in_cells_interval = {{ nova_discover_hosts_in_cells_interval }}
+image_metadata_prefilter = {{ nova_image_metadata_prefilter | bool }}
 
 [filter_scheduler]
 max_io_ops_per_host = {{ nova_max_io_ops_per_host }}
@@ -334,6 +335,7 @@ ram_weight_multiplier = {{ nova_ram_weight_multiplier }}
 enabled_filters = {{ _nova_scheduler_filters | join(',') }}
 host_subset_size = {{ nova_scheduler_host_subset_size }}
 track_instance_changes = {{ nova_scheduler_tracks_instance_changes }}
+image_properties_default_architecture = {{ nova_image_properties_default_architecture }}
 
 [upgrade_levels]
 compute=auto
